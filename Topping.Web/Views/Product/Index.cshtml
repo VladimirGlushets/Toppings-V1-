@@ -1,0 +1,20 @@
+﻿@using Topping.Domain.Models
+@model List<Topping.Web.Models.GroupViewModel>
+
+@foreach (var group in Model)
+{
+    <div class="row">
+        <div class="col-md-2">
+            @*<img scr="@Url.Content(group.ImagePath)" alt="@group.Name" width="150" height="150">*@
+            @*<img scr="~/Content/Images/Groups/@group.ImagePath" alt="@group.Name">*@
+            <img scr=@Url.Content("~/Content/img/berries-group.png") alt="@group.Name" width="150" height="150">
+
+        </div>
+        <div class="col-md-2">
+            <a href="@Url.Action("Products", "Product", new {group = group.GroupEnum})">@group.Name</a>
+        </div>
+        <div class="col-md-8">
+            @group.Description
+        </div>
+    </div>
+}
