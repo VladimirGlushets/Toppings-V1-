@@ -1,17 +1,34 @@
-﻿@model List<Topping.Domain.Models.Product>
+﻿@using Topping.Domain.Extentions
+@model List<Topping.Domain.Models.Product>
 
+@{
+    ViewBag.Title = Model.First().Group.GetValue();
 
-@foreach (var product in Model)
-{
-    <div class="row">
-        <div class="col-md-2">
-            <a href="@Url.Action("Details", "Product", new {id = product.Id})">@product.Name</a>
-        </div>
-        <div class="col-md-8">
-            @product.ShortDescription
-        </div>
-        <div class="col-md-2">
-
-        </div>
-    </div>
+    var columnsInRow = 2;
+    var rowsCount = Model.Count / columnsInRow;
+    var counter = 0;
+    var lastIndex = 0;
 }
+
+<div class="page-content">
+    <div class="container">
+        @for (var i = 0; i < rowsCount; i++)
+        {
+            <div class='row'>
+
+                @for (var j = lastIndex; j < Model.Count; j++)
+                {
+                    if (counter != 0 && counter % 2 == 0)
+                    {
+                        lastIndex = counter;
+                        counter = 0;
+                        break;
+                    }
+                    @Html.Partial("_ProductItem", Model[j])
+                    counter++;
+                }
+
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@using Topping.Common.Sources
+<div class="page-header-menu" style="display: block;">
+    <div class="container">
+        <form class="search-form" action="extra_search.html" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="query">
+                <span class="input-group-btn">
+                    <a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+                </span>
+            </div>
+        </form>
+        <div class="hor-menu">
+            <ul class="nav navbar-nav">
+                <li class="@(ViewBag.Title == Titles.Home ? "active" : "")">
+                    @Html.ActionLink(Menu.Home, "Index", "Product")
+                </li>
+                <li class="@(ViewBag.Title == Menu.About ? "active" : "")">
+                    @Html.ActionLink(Menu.About, "About", "Home")
+                </li>
+                <li class="@(ViewBag.Title == Menu.Contacts ? "active" : "")">
+                    @Html.ActionLink(Menu.Contacts, "Contact", "Home")
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

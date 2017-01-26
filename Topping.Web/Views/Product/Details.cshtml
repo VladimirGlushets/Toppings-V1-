@@ -1,10 +1,31 @@
-﻿@model Topping.Domain.Models.Product
+﻿@using Topping.Domain.Extentions
+@model Topping.Domain.Models.Product
 
-<div class="row">
-    <p>
-        <h2>@Model.Name</h2>
-    </p>
-    <p>
-        @Model.Description
-    </p>
+@{
+    ViewBag.Title = string.Format("Продукт группы \"{0}\"", Model.Group.GetValue());
+}
+
+<div class="page-content">
+    <div class="container">
+        <div class="col-md-12 col-sm-12">
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="caption caption-md">
+                        <i class="icon-bar-chart theme-font hide"></i>
+                        <span class="caption-subject theme-font bold uppercase">@Model.Name</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src=@Model.ImagePath alt="@Model.Name" width="300" height="300">
+                        </div>
+                        <div class="col-md-8 group-description-text">
+                            @Model.Description
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

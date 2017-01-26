@@ -1,0 +1,25 @@
+﻿@model Topping.Web.Models.GroupViewModel
+<a href="@Url.Action("Products", "Product", new {group = Model.GroupEnum})">
+    <div class="col-md-6 col-sm-12">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet light ">
+            <div class="portlet-title">
+                <div class="caption caption-md">
+                    <i class="icon-bar-chart theme-font hide"></i>
+                    <span class="caption-subject theme-font bold uppercase">@Model.Name</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src=@Model.ImagePath alt="@Model.Name" width="150" height="150">
+                    </div>
+                    <div class="col-md-8 group-description-text">
+                        @Model.Description
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</a>

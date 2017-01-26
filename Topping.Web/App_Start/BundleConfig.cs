@@ -28,12 +28,16 @@ namespace Topping.Web
                     "~/Content/admin/layout3/css/custom.css"
                     ));
 
+            bundles.Add(new StyleBundle("~/Content/Custom/styles").Include(
+                   "~/Content/Custom.css"
+                    ));
+
             #endregion
 
             #region JS
 
             bundles.Add(new ScriptBundle("~/Content/global/plugins/scripts").Include(
-                    "~/Content/global/plugins/jquery.min.js",
+                    //"~/Content/global/plugins/jquery.min.js",
                     "~/Content/global/plugins/jquery-migrate.min.js",
                     "~/Content/global/plugins/jquery-ui/jquery-ui.min.js",
                     "~/Content/global/plugins/bootstrap/js/bootstrap.min.js",
@@ -49,8 +53,6 @@ namespace Topping.Web
                     "~/Content/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js",
                     "~/Content/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js",
                     "~/Content/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js",
-                    "~/Content/global/plugins/morris/morris.min.js",
-                    "~/Content/global/plugins/morris/raphael-min.js",
                     "~/Content/global/plugins/jquery.sparkline.min.js",
                     "~/Content/global/scripts/metronic.js"
                     ));
@@ -60,10 +62,17 @@ namespace Topping.Web
                     "~/Content/admin/layout3/scripts/layout.js",
                     "~/Content/admin/layout2/scripts/quick-sidebar.js",
                     "~/Content/admin/layout3/scripts/demo.js",
-                    "~/Content/admin/pages/scripts/index3.js",
+                    "~/Content/admin/pages/scripts/index.js",
+                    //"~/Content/admin/pages/scripts/index3.js",
                     "~/Content/admin/pages/scripts/tasks.js"
                     ));
 
+
+            bundles.Add(new ScriptBundle("~/Content/global/morris/scripts").Include(
+                    "~/Content/global/plugins/morris/morris.min.js",
+                    "~/Content/global/plugins/morris/raphael-min.js"
+                    ));
+            
             #endregion
         }
     }

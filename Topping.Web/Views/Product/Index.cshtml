@@ -1,17 +1,34 @@
-﻿@model List<Topping.Web.Models.GroupViewModel>
+﻿@using Topping.Common.Sources
+@model List<Topping.Web.Models.GroupViewModel>
 
-@foreach (var group in Model)
-{
-    <div class="row">
-        <div class="col-md-2">
-            <img src=@group.ImagePath alt="@group.Name" width="150" height="150">
+@{
+    ViewBag.Title = Titles.Home;
 
-        </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("Products", "Product", new {group = group.GroupEnum})">@group.Name</a>
-        </div>
-        <div class="col-md-8">
-            @group.Description
-        </div>
-    </div>
+    var columnsInRow = 2;
+    var rowsCount = Model.Count / columnsInRow;
+    var counter = 0;
+    var lastIndex = 0;
 }
+
+<div class="page-content">
+    <div class="container">
+        @for (var i = 0; i < rowsCount; i++)
+        {
+            <div class='row'>
+                
+                @for (var j = lastIndex; j < Model.Count; j++)
+                {
+                    if (counter != 0 && counter % 2 == 0)
+                    {
+                        lastIndex = counter;
+                        counter=0;
+                        break;
+                    }
+                    @Html.Partial("_GroupItem", Model[j])
+                    counter++;
+                }
+
+            </div>
+        }
+    </div>
+</div>

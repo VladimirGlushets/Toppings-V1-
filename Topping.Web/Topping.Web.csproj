@@ -408,6 +408,7 @@
     <Content Include="Content\admin\pages\scripts\widgets.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Custom.css" />
     <Content Include="Content\global\css\components-md.css" />
     <Content Include="Content\global\css\components-rounded.css" />
     <Content Include="Content\global\css\components.css" />
@@ -4607,6 +4608,10 @@
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Products.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_PageHead.cshtml" />
+    <Content Include="Views\Product\_GroupItem.cshtml" />
+    <Content Include="Views\Product\_ProductItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
