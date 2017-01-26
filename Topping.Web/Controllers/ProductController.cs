@@ -43,7 +43,7 @@ namespace Topping.Web.Controllers
                     GroupEnum = group,
                     Name = group.GetValue(),
                     Description = group.GetDescription(),
-                    ImagePath = group.GetImagePath()
+                    ImagePath = new Uri(Request.Url, Url.Content(group.GetImageName())).AbsoluteUri
                 });
             }
 

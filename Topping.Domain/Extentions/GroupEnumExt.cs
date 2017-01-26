@@ -41,40 +41,22 @@ namespace Topping.Domain.Extentions
             }
         }
 
-        public static string GetImagePath(this GroupEnum group)
+        public static string GetImageName(this GroupEnum group)
         {
             switch (group)
             {
                 case GroupEnum.Berry:
-                    return "berries-group.png";
+                    return "~/Content/Images/Groups/berries-group.png";
                 case GroupEnum.Fruit:
-                    return "fruit-group.png";
+                    return "~/Content/Images/Groups/fruit-group.png";
                 case GroupEnum.Cocktail:
-                    return "coctail-group.png";
+                    return "~/Content/Images/Groups/coctail-group.png";
                 case GroupEnum.Coffee:
-                    return "coffee-group.png";
+                    return "~/Content/Images/Groups/coffee-group.png";
 
                 default:
                     return string.Empty;
             }
         }
-
-        //public static string GetImagePath(this GroupEnum group)
-        //{
-        //    switch (group)
-        //    {
-        //        case GroupEnum.Berry:
-        //            return "~/Content/Images/Groups/berries-group.png";
-        //        case GroupEnum.Fruit:
-        //            return "~/Content/Images/Groups/fruit-group.png";
-        //        case GroupEnum.Cocktail:
-        //            return "~/Content/Images/Groups/coctail-group.png";
-        //        case GroupEnum.Coffee:
-        //            return "~/Content/Images/Groups/coffee-group.png";
-
-        //        default:
-        //            return string.Empty;
-        //    }
-        //}
     }
 }
